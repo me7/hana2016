@@ -38,12 +38,12 @@ func processFile(filename string) error {
 		if strings.HasPrefix(lines[i], "Start_Time = msec") ||
 			strings.HasPrefix(lines[i], "Starttime = msec") ||
 			strings.HasPrefix(lines[i], "Start_time=msec") {
-			output = append(output, "c:/Agilent_ICT/ICT.exe start generic;append !gampolt")
+			output = append(output, "execute \"c:/Agilent_ICT/ICT.exe start generic\";append !gampolt")
 		}
 		if strings.HasPrefix(lines[i], "End_Time = msec") ||
 			strings.HasPrefix(lines[i], "Endtime = msec") ||
 			strings.HasPrefix(lines[i], "End_time=msec") {
-			output = append(output, "c:/Agilent_ICT/ICT.exe stop generic;append !gampolt")
+			output = append(output, "execute \"c:/Agilent_ICT/ICT.exe stop generic\";append !gampolt")
 		}
 	}
 
